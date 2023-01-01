@@ -33,6 +33,7 @@ print("\nLowest Score of class : ",low)
 new_list = list(FDS.values())
 # print(new_list)
 
+#marks with highest freq
 marks = FDS.values()
 freq = {}
 for i in marks:
