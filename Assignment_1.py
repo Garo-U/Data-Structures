@@ -33,14 +33,28 @@ print("\nLowest Score of class : ",low)
 new_list = list(FDS.values())
 # print(new_list)
 
-count_max_freq = {}
-for i in new_list:
-    count_max_freq[i]=count_max_freq.get(i,0)+1
+marks = FDS.values()
+freq = {}
+for i in marks:
+    if  i in freq:
+        freq[i] += 1
+    else :
+        freq[i]=1
 
+high_freq = 0
+high_f_marks = None
 
-val = count_max_freq.values()
-key = count_max_freq.keys()
-print(max(count_max_freq, key = count_max_freq.get)," : ",max(val))
+for m,c in freq.items():
+    if c > high_freq:
+        high_freq = c
+        high_f_marks = m
+    
+
+if high_freq == 1:
+    print("All marks have the same freq")
+else:    
+    print(f"marks with max freq are {high_f_marks} : {high_freq}")
+
 
 Absent_students = list(FDS_absent.values())
 print("\nNumber of Absent Students are : ",len(Absent_students))
